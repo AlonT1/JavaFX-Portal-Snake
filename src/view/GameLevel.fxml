@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pnlBackground" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="900.0" style="-fx-background-color: #348C56;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GameLevelController">
+   <children>
+      <AnchorPane fx:id="pnlGameStage" layoutX="20.0" layoutY="110.0" prefHeight="590.0" prefWidth="860.0" style="-fx-background-color: #348C56;">
+         <children>
+            <ImageView fitHeight="570.0" fitWidth="840.0" opacity="0.85" preserveRatio="true" x="10.0" y="10.0">
+               <image>
+                  <Image url="@../res/checkerboard.png" />
+               </image>
+               <rotationAxis>
+                  <Point3D />
+               </rotationAxis>
+            </ImageView>
+            <Canvas fx:id="pnlGameCanvas" height="590.0" width="860.0">
+               <rotationAxis>
+                  <Point3D />
+               </rotationAxis></Canvas>
+         </children></AnchorPane>
+      <AnchorPane fx:id="pnlScoring" prefHeight="90.0" prefWidth="900.0" style="-fx-background-color: #2C7749;">
+         <children>
+            <Label fx:id="lblScore" layoutX="228.0" layoutY="32.0" text="Score: 0" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="APPLE" size="30" text="" translateX="-5.0" />
+               </graphic>
+            </Label>
+            <Label fx:id="lblLength" layoutX="418.0" layoutY="32.0" text="Length: 3" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="ELLIPSIS_V" size="30" translateX="-5.0" />
+               </graphic>
+            </Label>
+            <Label fx:id="lblTimer" layoutX="601.0" layoutY="32.0" text="00:00" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="CLOCK_ALT" size="30" translateX="-5.0" />
+               </graphic>
+            </Label>
+            <Label fx:id="lblLife" layoutX="59.0" layoutY="32.0" text="Life: 3" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="HEART" size="30" translateX="-5.0" />
+               </graphic>
+            </Label>
+            <FontAwesomeIconView fx:id="btnHelp" fill="WHITE" glyphName="QUESTION" layoutX="753.0" layoutY="62.0" onMouseClicked="#showHelp" size="33" />
+            <FontAwesomeIconView fx:id="btnPlayPause" fill="WHITE" glyphName="PAUSE" layoutX="788.0" layoutY="60.0" onMouseClicked="#playPause" size="27" />
+            <FontAwesomeIconView fx:id="btnExit" fill="WHITE" glyphName="TIMES" layoutX="823.0" layoutY="61.0" onMouseClicked="#exit" size="32" />
+         </children></AnchorPane>
+      <AnchorPane fx:id="pnlGameNotification" layoutX="300.0" layoutY="300.0" prefHeight="150.0" prefWidth="330.0" visible="false">
+         <children>
+            <AnchorPane prefHeight="150.0" prefWidth="330.0" style="-fx-background-color: #348C56; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 10, 0, 0, 0); -fx-opacity: .4;" />
+            <FontAwesomeIconView fx:id="heart1" fill="WHITE" glyphName="HEART" layoutX="105.0" layoutY="42.0" size="30" />
+            <FontAwesomeIconView fx:id="heart2" fill="WHITE" glyphName="HEART" layoutX="151.0" layoutY="42.0" size="30" text="" />
+            <FontAwesomeIconView fx:id="heart3" fill="WHITE" glyphName="HEART" layoutX="197.0" layoutY="42.0" size="30" text="" />
+            <Label fx:id="lblStrikeStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="55.0" prefHeight="35.0" prefWidth="324.0" text="Change Direction Now!" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblActionTimeCounter" layoutX="152.0" layoutY="89.0" text="3" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnPlayAgain" layoutX="82.0" layoutY="99.0" mnemonicParsing="false" onAction="#playAgain" prefHeight="35.0" prefWidth="166.0" text="PLAY AGAIN!" textAlignment="CENTER" visible="false">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnlQuestion" prefHeight="720.0" prefWidth="900.0" stylesheets="@Menu.css" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="720.0" opacity="0.55" stroke="TRANSPARENT" strokeType="INSIDE" width="900.0" />
+            <ImageView fitHeight="272.0" fitWidth="900.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../res/questiontemplate.png" />
+               </image>
+            </ImageView>
+            <Button id="buttonResize" fx:id="btnAnswer1" alignment="TOP_CENTER" layoutX="90.0" layoutY="323.0" mnemonicParsing="false" onAction="#answer1" prefHeight="51.0" prefWidth="289.0" text="Answer 1" textAlignment="CENTER" wrapText="true" />
+            <Button id="buttonResize" fx:id="btnAnswer2" alignment="TOP_CENTER" layoutX="515.0" layoutY="323.0" mnemonicParsing="false" onAction="#answer2" prefHeight="51.0" prefWidth="289.0" stylesheets="@Menu.css" text="Answer 2" textAlignment="CENTER" wrapText="true" />
+            <Button id="buttonResize" fx:id="btnAnswer3" alignment="TOP_CENTER" layoutX="90.0" layoutY="385.0" mnemonicParsing="false" onAction="#answer3" prefHeight="51.0" prefWidth="289.0" text="Answer 3" textAlignment="CENTER" wrapText="true" />
+            <Label fx:id="txtQuestion" alignment="CENTER" contentDisplay="CENTER" layoutX="117.0" layoutY="243.0" prefHeight="69.0" prefWidth="667.0" text="Question Text" textAlignment="CENTER" wrapText="true" />
+            <Button id="buttonResize" fx:id="btnAnswer4" alignment="TOP_CENTER" layoutX="515.0" layoutY="385.0" mnemonicParsing="false" onAction="#answer4" prefHeight="51.0" prefWidth="289.0" text="Answer 4" textAlignment="CENTER" wrapText="true" />
+            <FontAwesomeIconView fx:id="vxAnswerSymbol" fill="WHITE" glyphName="TIMES" layoutX="417.0" layoutY="400.0" size="70" textAlignment="CENTER" visible="false" wrappingWidth="69.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnlHelp" prefHeight="720.0" prefWidth="900.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="720.0" opacity="0.55" stroke="TRANSPARENT" strokeType="INSIDE" width="900.0" />
+            <ImageView fitHeight="683.0" fitWidth="780.0" layoutX="60.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../res/menuHelp.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnBackToGame" layoutX="8.0" layoutY="87.0" mnemonicParsing="false" onAction="#backToGame" prefHeight="65.0" prefWidth="280.0" style="-fx-background-color: transparent; -fx-font-weight: bold; -fx-font-size: 30; -fx-effect: dropshadow( gaussian, rgba(0,0,0,0.4), 10,0,0,1 );" stylesheets="@Menu.css" text="Back to Game" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIconView fill="#9fe7ba" glyphName="CHEVRON_CIRCLE_LEFT" size="30" />
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

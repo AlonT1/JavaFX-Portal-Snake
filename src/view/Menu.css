@@ -1,0 +1,36 @@
+#anchor 
+{
+    -fx-background-color: radial-gradient(focus-distance 0%, center 50% 50%, radius 80%, #354913,#0f1405 );
+}
+
+.button 
+{
+    -fx-background-color: transparent;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-weight: bold;
+    -fx-text-fill: #9fe7ba;
+   	-fx-font-size: 2.0em; /* 12 */
+    -fx-effect: dropshadow( gaussian, rgba(0,0,0,0.4), 10,0,0,1 );
+}
+
+.button:hover 
+{
+  -fx-text-fill: #beec58;
+  -fx-effect: dropshadow( gaussian, rgba(0,0,0,0.4), 10,0,0,1 );
+}
+
+#buttonResize
+{
+	-fx-font-size: 1.4em; /* 12 */
+}
+
+
+.label 
+{
+	-fx-background-color: transparent;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-weight: bold;
+    -fx-text-fill: #9fe7ba;
+   	-fx-font-size: 1.5em; /* 12 */
+    -fx-effect: dropshadow( gaussian, rgba(0,0,0,0.7), 10,0,0,1 );
+}

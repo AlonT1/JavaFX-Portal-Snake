@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="720.0" maxWidth="920.0" minHeight="720.0" minWidth="920.0" prefHeight="720.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CreditsController">
+   <children>
+      <AnchorPane id="anchor" prefHeight="720.0" prefWidth="920.0" stylesheets="@Menu.css">
+         <children>
+            <ImageView fitHeight="268.0" fitWidth="286.0" layoutX="326.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../res/snakelogo.png" />
+               </image>
+            </ImageView>
+            <VBox alignment="CENTER" layoutX="219.0" layoutY="264.0" prefHeight="375.0" prefWidth="482.0" spacing="30.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="482.0" text="VIPER TEAM" textAlignment="CENTER" wrapText="true" />
+                  <Label prefHeight="58.0" prefWidth="482.0" text="Software Engineering and Quality Assurance course, Semester A 2020, Haifa University " textAlignment="CENTER" wrapText="true" />
+                  <Label text="Obstacle icons by: www.freepik.com" />
+                  <Label text="Question graphic template by: wildfilmsshorts2000" />
+                  <Label text="Snake body texture by: Rembound" />
+                  <Label text="Portal sprite animation by: Elthen's Pixel Art Shop" />
+                  <Label text="Using FontAwesome Icons" />
+               </children>
+            </VBox>
+            <Text fill="#9fe7ba" layoutX="843.0" layoutY="685.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="V3.0" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="btnBackToMenu" layoutX="34.0" layoutY="34.0" mnemonicParsing="false" onAction="#backToMenu" stylesheets="@Menu.css" text="Back to Menu">
+         <graphic>
+            <FontAwesomeIconView fill="#8ecfa3" glyphName="CHEVRON_CIRCLE_LEFT" size="30" />
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

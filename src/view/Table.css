@@ -1,0 +1,39 @@
+
+.table-cell {
+    -fx-padding: 0.66em;
+    -fx-border-color: transparent -fx-box-border transparent transparent;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 1.4em;
+}
+
+.table-row-cell:even{
+    -fx-background-color: -fx-table-cell-border-color, #616161;
+    -fx-background-insets: 0, 0 0 1 0;
+}
+
+
+
+
+.table-row-cell:odd{
+    -fx-background-color: -fx-table-cell-border-color, #424242;
+    -fx-background-insets: 0, 0 0 1 0;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #005797;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+
+
+
+
+
+.table-view .column-header-background .label{
+    -fx-text-fill: black;
+    -fx-effect: dropshadow( gaussian, rgba(0,0,0,0), 10,0,0,1 );
+    
+}
+

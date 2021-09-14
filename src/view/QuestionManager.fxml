@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootMainAnchorPain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.QuestionManagerController">
+   <children>
+      <VBox prefHeight="628.0" prefWidth="217.0" style="-fx-background-color: #3F2B63;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="117.0" prefWidth="217.0">
+               <children>
+                  <ImageView fitHeight="130.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/snakelogo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="295.0" prefWidth="217.0" spacing="40.0">
+               <VBox.margin>
+                  <Insets top="100.0" />
+               </VBox.margin>
+               <children>
+                  <Button fx:id="btnAddQuestion" mnemonicParsing="false" onAction="#addQuestion" prefHeight="50.0" prefWidth="180.0" text="Add Question">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="PLUS" size="16" wrappingWidth="15.0" />
+                     </graphic>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin></Button>
+                  <Button fx:id="btnEditQuestion" mnemonicParsing="false" onAction="#editQuestion" prefHeight="50.0" prefWidth="180.0" text="Edit Question">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="EDIT" size="16" wrappingWidth="20.0" />
+                     </graphic>
+                     <VBox.margin>
+                        <Insets bottom="-30.0" />
+                     </VBox.margin></Button>
+                  <HBox prefHeight="49.0" prefWidth="217.0" spacing="10.0">
+                     <children>
+                        <Button fx:id="btnApply" mnemonicParsing="false" onAction="#applyQuestionEdit" prefHeight="30.0" prefWidth="150.0" text="Apply">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="CHECK" size="16" wrappingWidth="20.0" />
+                           </graphic>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#cancelQuestionEdit" prefHeight="30.0" prefWidth="150.0" text="Cancel">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="CLOSE" size="16" wrappingWidth="20.0" />
+                           </graphic>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="-20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Button fx:id="btnRemoveQuestion" mnemonicParsing="false" onAction="#removeQuestion" prefHeight="50.0" prefWidth="180.0" text="Remove Question">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="REMOVE" size="16" wrappingWidth="20.0" />
+                     </graphic></Button>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <HBox fx:id="pnlStatus" alignment="CENTER_LEFT" layoutX="217.0" layoutY="44.0" prefHeight="31.0" prefWidth="883.0" spacing="100.0" style="-fx-background-color: #554178;" AnchorPane.leftAnchor="217.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label fx:id="lblStatus" alignment="CENTER" text="Question Manager" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="10.0" left="50.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <Label fx:id="btnBackToMenu" layoutX="998.0" layoutY="14.0" onMouseClicked="#backToMenu" text="Back to Menu">
+         <graphic>
+            <FontAwesomeIconView glyphName="SIGN_OUT" size="16" />
+         </graphic></Label>
+      <SplitPane dividerPositions="0.38235294117647056" layoutX="236.0" layoutY="106.0" orientation="VERTICAL" prefHeight="580.0" prefWidth="850.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="242.0" prefWidth="848.0">
+               <children>
+                  <TextArea fx:id="txtAreaQuestion" layoutX="117.0" layoutY="21.0" prefHeight="99.0" prefWidth="671.0" promptText="Question" text="Which of the following is a creational design pattern?" wrapText="true" />
+                  <VBox alignment="BOTTOM_LEFT" layoutX="16.0" layoutY="21.0" prefHeight="99.0" prefWidth="92.0" spacing="10.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Level">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Text>
+                        <RadioButton alignment="CENTER_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="17.0" prefWidth="80.0" selected="true" text="Easy (1)">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="tgDifficulty" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton alignment="CENTER_LEFT" contentDisplay="CENTER" layoutX="10.0" layoutY="26.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="91.0" text="Medium (2)" toggleGroup="$tgDifficulty" />
+                        <RadioButton alignment="CENTER_LEFT" contentDisplay="CENTER" layoutX="10.0" layoutY="44.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="83.0" text="Hard (3)" toggleGroup="$tgDifficulty" />
+                     </children>
+                  </VBox>
+                  <GridPane hgap="15.0" layoutX="118.0" layoutY="125.0" prefHeight="87.0" prefWidth="693.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <RadioButton mnemonicParsing="false" selected="true">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="tgAnswers" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <TextField fx:id="txtFldAnswer1" prefHeight="25.0" prefWidth="298.0" promptText="Answer 1" text="Singleton">
+                           <GridPane.margin>
+                              <Insets left="25.0" right="25.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <RadioButton mnemonicParsing="false" prefWidth="12.0" toggleGroup="$tgAnswers" GridPane.columnIndex="1" />
+                        <TextField fx:id="txtFldAnswer2" promptText="Answer 2" text="Adapter" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets left="25.0" right="25.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <RadioButton mnemonicParsing="false" prefWidth="12.0" toggleGroup="$tgAnswers" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtFldAnswer3" promptText="Answer 3" text="Shape Factory" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="25.0" right="25.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <RadioButton mnemonicParsing="false" prefWidth="12.0" toggleGroup="$tgAnswers" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtFldAnswer4" prefHeight="27.0" prefWidth="290.0" promptText="Answer 4" text="Decorator" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="25.0" right="25.0" />
+                           </GridPane.margin>
+                        </TextField>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="616.0">
+               <children>
+                  <TableView fx:id="tblQuestions" layoutX="4.0" layoutY="5.0" prefHeight="354.0" prefWidth="848.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="colID" prefWidth="33.0" text="ID" />
+                      <TableColumn fx:id="colQuestion" prefWidth="320.0" text="Question" />
+                        <TableColumn fx:id="colAnswers" prefWidth="343.0" text="Multiple Choices" />
+                        <TableColumn fx:id="colCorrectAns" minWidth="0.0" prefWidth="48.0" text="Answer" />
+                        <TableColumn fx:id="colLevel" minWidth="0.0" prefWidth="41.0" text="Level" />
+                        <TableColumn fx:id="colTeam" minWidth="0.0" prefWidth="58.0" text="Team" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
